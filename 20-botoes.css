@@ -1,0 +1,33 @@
+.btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.btn {
+  background-color: gray;
+  color: #ffffff;
+}
+.btn:hover {
+  background-color: black;
+}
+.btn.btn-red {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+.btn-red:hover {
+  background-color: greenyellow;
+}
+.btn.btn-blue {
+  background-color: #3498db;
+  color: #ffffff;
+}
+.btn-blue:hover {
+  background-color: #2980b9;
+}
+.btn.btn-green {
+  background-color: green;
+  color: #ffffff;
+}
+.btn-green:hover {
+  background-color: darkgreen;
+}
