@@ -2,14 +2,14 @@ https://www.schoolofnet.com/
 
 Curso de Desenvolvimento Web
 
-html-basico: aula 01 até aula 12 + pasta 'img'
+html-basico: aula 01 atï¿½ aula 12 + pasta 'img'
 
-CSS: aula 13 até aula 22
+CSS: aula 13 atï¿½ aula 22
 
-css 3: 23 até 29
-
-
+css 3: 23 atï¿½ 33
 
 
 
-Atividades resolvidas por Maxwel Araújo Costa
+
+
+Atividades resolvidas por Maxwel Araï¿½jo Costa
