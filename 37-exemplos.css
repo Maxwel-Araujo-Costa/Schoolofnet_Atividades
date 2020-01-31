@@ -1,0 +1,38 @@
+.resize1 {
+  border: 2px solid;
+  padding: 20px;
+  width: 300px;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.resize2 {
+  border: 2px solid;
+  padding: 20px;
+  width: 300px;
+  resize: vertical;
+  overflow: auto;
+}
+
+.resize3 {
+  border: 2px solid;
+  padding: 20px;
+  width: 300px;
+  resize: both;
+  overflow: auto;
+}
+.print {
+  display: none;
+}
+.screen {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-color: red;
+  }
+  .screen {
+    display: block;
+  }
+}
