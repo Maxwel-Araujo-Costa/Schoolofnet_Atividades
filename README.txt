@@ -1,15 +1,16 @@
-https://www.schoolofnet.com/
+﻿https://www.schoolofnet.com/
 
 Curso de Desenvolvimento Web
 
-html-basico: aula 01 at� aula 12 + pasta 'img'
+html-basico: aula 01 até aula 12 + pasta 'img'
 
-CSS: aula 13 at� aula 22
+CSS: aula 13 até aula 22
 
-css 3: 23 at� 33
-
-
-
+css 3: 23 até 37
+Javascript: 38 até 41
 
 
-Atividades resolvidas por Maxwel Ara�jo Costa
+
+
+
+Atividades resolvidas por Maxwel Araújo Costa
