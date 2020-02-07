@@ -6,6 +6,14 @@ use App\Controller\AppController;
 
 class UsersController extends AppController
 {
+
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('Auth');
+        $this->Auth->allow(['view', 'index', 'add']);
+    }
     public function index()
     {
         $users = $this->paginate($this->Users);
@@ -14,6 +22,9 @@ class UsersController extends AppController
     }
     public function add()
     {
+        if ($this->request->is('post')) {
+            var_dump($this->request->data);
+        }
     }
     public function edit($id)
     {
