@@ -1,16 +1,16 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\ArticlesController;
+use App\Controller\UsersController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\ArticlesController Test Case
+ * App\Controller\UsersController Test Case
  *
- * @uses \App\Controller\ArticlesController
+ * @uses \App\Controller\UsersController
  */
-class ArticlesControllerTest extends TestCase
+class UsersControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -20,8 +20,18 @@ class ArticlesControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Articles',
+        'app.Users',
     ];
+
+    /**
+     * Test initialize method
+     *
+     * @return void
+     */
+    public function testInitialize()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 
     /**
      * Test index method
@@ -29,16 +39,6 @@ class ArticlesControllerTest extends TestCase
      * @return void
      */
     public function testIndex()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test view method
-     *
-     * @return void
-     */
-    public function testView()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
@@ -59,6 +59,16 @@ class ArticlesControllerTest extends TestCase
      * @return void
      */
     public function testEdit()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test view method
+     *
+     * @return void
+     */
+    public function testView()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

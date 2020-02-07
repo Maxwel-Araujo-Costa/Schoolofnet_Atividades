@@ -6,7 +6,6 @@ use App\Controller\AppController;
 /**
  * Articles Controller
  *
- * @property \App\Model\Table\ArticlesTable $Articles
  *
  * @method \App\Model\Entity\Article[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
@@ -19,9 +18,6 @@ class ArticlesController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users'],
-        ];
         $articles = $this->paginate($this->Articles);
 
         $this->set(compact('articles'));
@@ -37,7 +33,7 @@ class ArticlesController extends AppController
     public function view($id = null)
     {
         $article = $this->Articles->get($id, [
-            'contain' => ['Users'],
+            'contain' => [],
         ]);
 
         $this->set('article', $article);
@@ -60,8 +56,7 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $users = $this->Articles->Users->find('list', ['limit' => 200]);
-        $this->set(compact('article', 'users'));
+        $this->set(compact('article'));
     }
 
     /**
@@ -85,8 +80,7 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $users = $this->Articles->Users->find('list', ['limit' => 200]);
-        $this->set(compact('article', 'users'));
+        $this->set(compact('article'));
     }
 
     /**
