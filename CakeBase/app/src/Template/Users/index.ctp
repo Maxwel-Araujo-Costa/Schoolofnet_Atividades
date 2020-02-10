@@ -15,15 +15,17 @@
                 <td><?php echo $user->id; ?></td>
                 <td><?php echo $user->name; ?></td>
                 <td><?php echo $user->username; ?></td>
-                <td><?php echo $user->action; ?></td>
+                <td><?php echo $user->email; ?></td>
                 <td>
-                    <a href="">view</a>
-                    <a href="">edit</a>
-                    <a href="">delete</a>
+                    <a href="/users/view/<?php echo $user->id; ?>">view</a>
+                    <a href="/users/edit/<?php echo $user->id; ?>">edit</a>
+                    <?php echo $this->Form->create($user, ['type' => 'delete', 'url' => ['action' => 'delete/']]); ?>
+                    <input type="submit" value="delete">
+                    </form>
                 </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
 
-<a href="">new</a>
+<a href="/users/add">new</a>

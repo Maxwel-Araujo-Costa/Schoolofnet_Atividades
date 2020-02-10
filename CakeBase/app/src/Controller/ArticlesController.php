@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -11,6 +12,10 @@ use App\Controller\AppController;
  */
 class ArticlesController extends AppController
 {
+    public function initialize()
+    {
+        $this->loadModel('Users');
+    }
     /**
      * Index method
      *
@@ -47,6 +52,10 @@ class ArticlesController extends AppController
     public function add()
     {
         $article = $this->Articles->newEntity();
+
+        $users = $this->Users->find('list')->toArray();
+        //$article->user_id = $users->user;
+
         if ($this->request->is('post')) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
             if ($this->Articles->save($article)) {
@@ -56,7 +65,8 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $this->set(compact('article'));
+        //$this->set(compact('article'));
+        $this->set(compact('article', 'users'));
     }
 
     /**
@@ -69,8 +79,10 @@ class ArticlesController extends AppController
     public function edit($id = null)
     {
         $article = $this->Articles->get($id, [
-            'contain' => [],
+            'contain' => ['Users'],
         ]);
+        $users = $this->Users->find('list')->toArray();
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
             if ($this->Articles->save($article)) {
@@ -80,7 +92,7 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $this->set(compact('article'));
+        $this->set(compact('article', 'users'));
     }
 
     /**
