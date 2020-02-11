@@ -12,7 +12,40 @@ class UsersController extends AppController
         parent::initialize();
 
         $this->loadComponent('Auth');
-        $this->Auth->allow(['view', 'index', 'add', 'edit', 'delete']);
+        //$this->Auth->allow(['view', 'index', 'add', 'edit', 'delete', 'logout']);
+    }
+    // public function login()
+    //{
+    //     if ($this->request->is('post')) {
+    //debug($this->request->data);
+    //         $user = $this->Auth->identify();
+    //        if ($user) {
+    //            $this->Auth->setUser($user);
+    //           return $this->redirect($this->Auth->redirectUrl());
+    //         }
+    //     }
+    // }
+    public function login()
+    {
+        if ($this->request->is('post')) {
+
+            $usuario = $this->request->getData('username');
+            $senha = $this->request->getData('password');
+            $user = $this->Users->find('all', [
+                'conditions' => ['Users.username' => $usuario],
+            ])->first();
+
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect('/users');
+            }
+            return $this->redirect('/users/login');
+        }
+    }
+    public function logout()
+    {
+        $this->Auth->logout();
+        return $this->redirect(['action' => 'login']);
     }
     public function index()
     {
@@ -29,9 +62,10 @@ class UsersController extends AppController
             //var_dump($user);
             //var_dump($this->request->data);
             if ($this->Users->save($user)) {
-                echo "salvo com sucesso!";
+                $this->Flash->success("salvo com sucesso!");
+                $this->redirect(['controller' => 'users', 'action' => 'index']);
             } else {
-                echo "Nao pode ser salvo.";
+                $this->Flash->error("Nao pode ser removido.");
             }
         }
         $this->set(compact('user'));
@@ -46,9 +80,9 @@ class UsersController extends AppController
             //var_dump($user);
             //var_dump($this->request->data);
             if ($this->Users->save($user)) {
-                echo "salvo com sucesso!";
+                $this->Flash->success("salvo com sucesso!");
             } else {
-                echo "Nao pode ser salvo.";
+                $this->Flash->error("Nao pode ser removido.");
             }
         }
         $this->set(compact('user'));
@@ -64,10 +98,10 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
-            echo "removido com sucesso!";
+            $this->Flash->success("Removido com sucesso!");
         } else {
-            echo "Nao pode ser removido.";
+            $this->Flash->error("Nao pode ser removido.");
         }
-        exit;
+        $this->redirect(['controller' => 'users', 'action' => 'index']);
     }
 }
