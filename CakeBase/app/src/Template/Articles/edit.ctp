@@ -2,7 +2,7 @@
 
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $article
+ * @var \App\Model\Entity\Article $article
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -15,6 +15,8 @@
             )
             ?></li>
         <li><?= $this->Html->link(__('List Articles'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="articles form large-9 medium-8 columns content">
@@ -25,9 +27,7 @@
         echo $this->Form->control('title');
         echo $this->Form->control('url');
         echo $this->Form->control('content');
-        echo $this->Form->control('users_id',  [
-            'options' => $users
-        ]);
+        echo $this->Form->control('user_id', ['options' => $users]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -15,6 +15,7 @@ class ArticlesController extends AppController
     public function initialize()
     {
         $this->loadModel('Users');
+        $this->loadComponent('Flash');
     }
     /**
      * Index method
@@ -79,10 +80,8 @@ class ArticlesController extends AppController
     public function edit($id = null)
     {
         $article = $this->Articles->get($id, [
-            'contain' => ['Users'],
+            'contain' => [],
         ]);
-        $users = $this->Users->find('list')->toArray();
-
         if ($this->request->is(['patch', 'post', 'put'])) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
             if ($this->Articles->save($article)) {
@@ -92,9 +91,9 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
+        $users = $this->Articles->Users->find('list', ['limit' => 200]);
         $this->set(compact('article', 'users'));
     }
-
     /**
      * Delete method
      *
