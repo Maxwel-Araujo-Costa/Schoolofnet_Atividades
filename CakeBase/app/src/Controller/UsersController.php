@@ -3,17 +3,24 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 class UsersController extends AppController
 {
-
-    public function initialize()
+    public function beforeFilter(Event $event)
     {
-        parent::initialize();
-
-        $this->loadComponent('Auth');
-        //$this->Auth->allow(['view', 'index', 'add', 'edit', 'delete', 'logout']);
+        parent::beforeFilter($event);
+        //$this->Auth->deny('edit');
+        $this->Auth->allow('add');
     }
+
+    //public function initialize()
+    //{
+    //     parent::initialize();
+
+    //    $this->loadComponent('Auth');
+    //$this->Auth->allow(['view', 'index', 'add', 'edit', 'delete', 'logout']);
+    // }
     // public function login()
     //{
     //     if ($this->request->is('post')) {
@@ -25,14 +32,23 @@ class UsersController extends AppController
     //         }
     //     }
     // }
+
+    // public function display($name)
+    //{
+    //     echo $name;
+    //      exit;
+    //  }
+
+
+
     public function login()
     {
         if ($this->request->is('post')) {
 
-            $usuario = $this->request->getData('username');
+            $usuario = $this->request->getData('email');
             $senha = $this->request->getData('password');
             $user = $this->Users->find('all', [
-                'conditions' => ['Users.username' => $usuario],
+                'conditions' => ['Users.email' => $usuario],
             ])->first();
 
             if ($user) {

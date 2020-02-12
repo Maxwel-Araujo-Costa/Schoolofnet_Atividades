@@ -1,0 +1,8 @@
+h1 {
+    border-bottom: 2px #ccc solid;
+}
+
+.jumbotron h1 {
+    color: black;
+    border-bottom: 1px solid;
+}
