@@ -1,4 +1,6 @@
 <h1>Home</h1>
+<p><a class="btn btn-info btn-sm" href="/admin/Articles" role="button">Articles</a></p>
+<p><a class="btn btn-secondary btn-sm" href="/admin/Users" role="button">Users</a></p>
 <?php
 $this->start('css');
 ?>

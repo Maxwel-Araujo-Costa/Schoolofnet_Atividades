@@ -50,11 +50,17 @@ class AppController extends Controller
                 'Form' => [
                     'fields' => [
                         'username' => 'email',
-                        //'password'=>'',
+                        'password' => 'password',
                     ]
                 ]
             ],
-            'loginRedirect' => '/articles'
+            //'loginRedirect' => '/articles'
+            'loginAction' => [
+                'controller' => 'Users',
+                'action' => 'login'
+            ],
+            // If unauthorized, return them to page they were just on
+            'unauthorizedRedirect' => $this->referer()
         ]);
 
         /*
@@ -63,6 +69,7 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
+
 
     public function beforeFilter(Event $event)
     {
