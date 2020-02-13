@@ -19,10 +19,13 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
+
+use Cake\Core\Plugin;
 use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
 use Cake\Routing\Route\DashedRoute;
+use Cake\Routing\Route\Route;
 
 /**
  * The default class to use for all routes
@@ -94,6 +97,16 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->fallbacks(DashedRoute::class);
 });
 
+Router::prefix('admin', function ($routes) {
+    $routes->connect('/', ['controller' => 'Articles', 'action' =>  'index']);
+
+    //$routes->connect('/:controller', []);
+    //$routes->connect('/controller/:action', []);
+    // $routes->connect('/controller/:action/*', []);
+
+    $routes->fallbacks(DashedRoute::class);
+});
+
 /**
  * If you need a different set of middleware or none at all,
  * open new scope and define routes there.
@@ -105,3 +118,4 @@ Router::scope('/', function (RouteBuilder $routes) {
  * });
  * ```
  */
+Plugin::routes();
