@@ -9,19 +9,19 @@ use Cake\Validation\Validator;
 /**
  * Categories Model
  *
- * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsToMany $Products
+ * @property \Cake\ORM\Association\BelongsToMany $Products
  *
  * @method \App\Model\Entity\Category get($primaryKey, $options = [])
  * @method \App\Model\Entity\Category newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Category[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Category|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Category saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Category|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\Category patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Category[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Category findOrCreate($search, callable $callback = null, $options = [])
  */
 class CategoriesTable extends Table
 {
+
     /**
      * Initialize method
      *
@@ -39,7 +39,7 @@ class CategoriesTable extends Table
         $this->belongsToMany('Products', [
             'foreignKey' => 'category_id',
             'targetForeignKey' => 'product_id',
-            'joinTable' => 'categories_products',
+            'joinTable' => 'categories_products'
         ]);
     }
 
@@ -53,19 +53,15 @@ class CategoriesTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('title')
-            ->maxLength('title', 100)
             ->requirePresence('title', 'create')
-            ->notEmptyString('title');
+            ->notEmpty('title');
 
         $validator
-            ->scalar('url')
-            ->maxLength('url', 100)
             ->requirePresence('url', 'create')
-            ->notEmptyString('url');
+            ->notEmpty('url');
 
         return $validator;
     }

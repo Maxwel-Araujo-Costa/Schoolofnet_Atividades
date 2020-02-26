@@ -4,24 +4,19 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Product Entity
+ * Stock Entity
  *
  * @property int $id
- * @property string $title
- * @property float $price
- * @property float $cost
- * @property int $status
- * @property string $description
- * @property int $alert_quantity
+ * @property int $product_id
+ * @property int $quantity
+ * @property float $unit_price
+ * @property float $unit_cost
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  *
- * @property \App\Model\Entity\Stock[] $stock
- * @property \App\Model\Entity\StockIn[] $stock_in
- * @property \App\Model\Entity\StockOut[] $stock_out
- * @property \App\Model\Entity\Category[] $categories
+ * @property \App\Model\Entity\Product $product
  */
-class Product extends Entity
+class Stock extends Entity
 {
 
     /**
