@@ -15,7 +15,7 @@
   <!-- Navbar Right Menu -->
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
-      <li><a href="/users/logout">Sair</a></li>
+        <li><a href="/users/logout">Sair</a></li>
     </ul>
   </div>
 </nav>

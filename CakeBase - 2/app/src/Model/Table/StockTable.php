@@ -7,21 +7,21 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StockIn Model
+ * Stock Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Products
  *
- * @method \App\Model\Entity\StockIn get($primaryKey, $options = [])
- * @method \App\Model\Entity\StockIn newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StockIn[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StockIn|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StockIn patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StockIn[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StockIn findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Stock get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Stock newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Stock[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Stock|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Stock patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Stock[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Stock findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StockInTable extends Table
+class StockTable extends Table
 {
 
     /**
@@ -34,12 +34,11 @@ class StockInTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stock_in');
+        $this->setTable('stock');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
-        $this->addBehavior('StockManager');
 
         $this->belongsTo('Products', [
             'foreignKey' => 'product_id',
@@ -64,6 +63,16 @@ class StockInTable extends Table
             ->requirePresence('quantity', 'create')
             ->notEmpty('quantity');
 
+        $validator
+            ->decimal('unit_price')
+            ->requirePresence('unit_price', 'create')
+            ->notEmpty('unit_price');
+
+        $validator
+            ->decimal('unit_cost')
+            ->requirePresence('unit_cost', 'create')
+            ->notEmpty('unit_cost');
+
         return $validator;
     }
 
@@ -80,5 +89,4 @@ class StockInTable extends Table
 
         return $rules;
     }
-
 }

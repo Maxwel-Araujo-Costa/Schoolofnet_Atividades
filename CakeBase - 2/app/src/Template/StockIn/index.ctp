@@ -37,8 +37,6 @@
                                         <td><?= h($stockIn->created) ?></td>
                                         <td class="actions" style="white-space:nowrap">
                                 <?= $this->Html->link(__('View'), ['action' => 'view', $stockIn->id], ['class'=>'btn btn-default btn-xs']) ?>
-                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $stockIn->id], ['class'=>'btn btn-primary btn-xs']) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $stockIn->id], ['confirm' => __('Are you sure you want to delete # {0}?', $stockIn->id), 'class'=>'btn btn-danger btn-xs']) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

@@ -15,6 +15,7 @@ use Cake\ORM\Entity;
  */
 class StockOut extends Entity
 {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -25,9 +26,7 @@ class StockOut extends Entity
      * @var array
      */
     protected $_accessible = [
-        'product_id' => true,
-        'quantity' => true,
-        'created' => true,
-        'product' => true,
+        '*' => true,
+        'id' => false
     ];
 }

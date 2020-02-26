@@ -9,16 +9,15 @@ use Cake\Validation\Validator;
 /**
  * Products Model
  *
- * @property \App\Model\Table\StockTable&\Cake\ORM\Association\HasMany $Stock
- * @property \App\Model\Table\StockInTable&\Cake\ORM\Association\HasMany $StockIn
- * @property \App\Model\Table\StockOutTable&\Cake\ORM\Association\HasMany $StockOut
- * @property \App\Model\Table\CategoriesTable&\Cake\ORM\Association\BelongsToMany $Categories
+ * @property \Cake\ORM\Association\HasMany $Stock
+ * @property \Cake\ORM\Association\HasMany $StockIn
+ * @property \Cake\ORM\Association\HasMany $StockOut
+ * @property \Cake\ORM\Association\BelongsToMany $Categories
  *
  * @method \App\Model\Entity\Product get($primaryKey, $options = [])
  * @method \App\Model\Entity\Product newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Product[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Product|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Product saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Product|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\Product patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Product[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Product findOrCreate($search, callable $callback = null, $options = [])
@@ -27,6 +26,7 @@ use Cake\Validation\Validator;
  */
 class ProductsTable extends Table
 {
+
     /**
      * Initialize method
      *
@@ -43,19 +43,19 @@ class ProductsTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->hasMany('Stock', [
-            'foreignKey' => 'product_id',
+        $this->hasOne('Stock', [
+            'foreignKey' => 'product_id'
         ]);
         $this->hasMany('StockIn', [
-            'foreignKey' => 'product_id',
+            'foreignKey' => 'product_id'
         ]);
         $this->hasMany('StockOut', [
-            'foreignKey' => 'product_id',
+            'foreignKey' => 'product_id'
         ]);
         $this->belongsToMany('Categories', [
             'foreignKey' => 'product_id',
             'targetForeignKey' => 'category_id',
-            'joinTable' => 'categories_products',
+            'joinTable' => 'categories_products'
         ]);
     }
 
@@ -69,35 +69,34 @@ class ProductsTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('title')
-            ->maxLength('title', 100)
             ->requirePresence('title', 'create')
-            ->notEmptyString('title');
+            ->notEmpty('title');
 
         $validator
             ->decimal('price')
             ->requirePresence('price', 'create')
-            ->notEmptyString('price');
+            ->notEmpty('price');
 
         $validator
             ->decimal('cost')
             ->requirePresence('cost', 'create')
-            ->notEmptyString('cost');
+            ->notEmpty('cost');
 
         $validator
             ->integer('status')
-            ->notEmptyString('status');
+            ->requirePresence('status', 'create')
+            ->notEmpty('status');
 
         $validator
-            ->scalar('description')
-            ->allowEmptyString('description');
+            ->allowEmpty('description');
 
         $validator
             ->integer('alert_quantity')
-            ->notEmptyString('alert_quantity');
+            ->requirePresence('alert_quantity', 'create')
+            ->notEmpty('alert_quantity');
 
         return $validator;
     }

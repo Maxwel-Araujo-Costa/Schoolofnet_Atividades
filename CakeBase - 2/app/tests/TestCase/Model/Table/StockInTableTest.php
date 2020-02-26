@@ -10,6 +10,7 @@ use Cake\TestSuite\TestCase;
  */
 class StockInTableTest extends TestCase
 {
+
     /**
      * Test subject
      *
@@ -23,8 +24,12 @@ class StockInTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.StockIn',
-        'app.Products',
+        'app.stock_in',
+        'app.products',
+        'app.stock',
+        'app.stock_out',
+        'app.categories',
+        'app.categories_products'
     ];
 
     /**
@@ -35,8 +40,8 @@ class StockInTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('StockIn') ? [] : ['className' => StockInTable::class];
-        $this->StockIn = TableRegistry::getTableLocator()->get('StockIn', $config);
+        $config = TableRegistry::exists('StockIn') ? [] : ['className' => 'App\Model\Table\StockInTable'];
+        $this->StockIn = TableRegistry::get('StockIn', $config);
     }
 
     /**

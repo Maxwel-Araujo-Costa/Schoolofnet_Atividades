@@ -10,6 +10,7 @@ use Cake\TestSuite\TestCase;
  */
 class CategoriesTableTest extends TestCase
 {
+
     /**
      * Test subject
      *
@@ -23,8 +24,12 @@ class CategoriesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Categories',
-        'app.Products',
+        'app.categories',
+        'app.products',
+        'app.stock',
+        'app.stock_in',
+        'app.stock_out',
+        'app.categories_products'
     ];
 
     /**
@@ -35,8 +40,8 @@ class CategoriesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('Categories') ? [] : ['className' => CategoriesTable::class];
-        $this->Categories = TableRegistry::getTableLocator()->get('Categories', $config);
+        $config = TableRegistry::exists('Categories') ? [] : ['className' => 'App\Model\Table\CategoriesTable'];
+        $this->Categories = TableRegistry::get('Categories', $config);
     }
 
     /**

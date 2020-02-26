@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\StockOutTable;
+use App\Model\Table\StockTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\StockOutTable Test Case
+ * App\Model\Table\StockTable Test Case
  */
-class StockOutTableTest extends TestCase
+class StockTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\StockOutTable
+     * @var \App\Model\Table\StockTable
      */
-    public $StockOut;
+    public $Stock;
 
     /**
      * Fixtures
@@ -24,10 +24,10 @@ class StockOutTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.stock_out',
-        'app.products',
         'app.stock',
+        'app.products',
         'app.stock_in',
+        'app.stock_out',
         'app.categories',
         'app.categories_products'
     ];
@@ -40,8 +40,8 @@ class StockOutTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('StockOut') ? [] : ['className' => 'App\Model\Table\StockOutTable'];
-        $this->StockOut = TableRegistry::get('StockOut', $config);
+        $config = TableRegistry::exists('Stock') ? [] : ['className' => 'App\Model\Table\StockTable'];
+        $this->Stock = TableRegistry::get('Stock', $config);
     }
 
     /**
@@ -51,7 +51,7 @@ class StockOutTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->StockOut);
+        unset($this->Stock);
 
         parent::tearDown();
     }

@@ -1,3 +1,4 @@
+
 <!-- sidebar: style can be found in sidebar.less -->
 <section class="sidebar">
 
@@ -5,14 +6,14 @@
   <div class="user-panel">
     <div class="pull-left image">
       <?php
-      echo $this->Html->image(
-        'TwitterBootstrap.user2-160x160.jpg',
-        ['class' => 'img-circle',  "alt" => "User Image"]
-      );
-      ?>
+            echo $this->Html->image(
+                'TwitterBootstrap.user2-160x160.jpg',
+                ['class'=>'img-circle',  "alt"=>"User Image"]
+            );
+        ?>
     </div>
     <div class="pull-left info">
-      <p>Maxwel Araújo Costa</p>
+      <p>Alexander Pierce</p>
       <!-- Status -->
       <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
@@ -21,11 +22,11 @@
   <!-- search form (Optional) -->
   <form action="/products" method="get" class="sidebar-form">
     <div class="input-group">
-      <input type="text" name="q" class="form-control" placeholder="<?php echo __('Search...'); ?>">
-      <span class="input-group-btn">
-        <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-        </button>
-      </span>
+      <input type="text" name="q" class="form-control" placeholder="<?php echo __('Search...');?>">
+          <span class="input-group-btn">
+            <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+            </button>
+          </span>
     </div>
   </form>
   <!-- /.search form -->

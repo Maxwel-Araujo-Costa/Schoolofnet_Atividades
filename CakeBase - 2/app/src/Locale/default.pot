@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-02-21 17:14+0000\n"
+"POT-Creation-Date: 2017-03-21 01:45+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,155 +14,123 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/CategoriesController.php:54
-#: Controller/CategoriesController.php:79
+#: Controller/CategoriesController.php:55;81
 msgid "The category has been saved."
 msgstr ""
 
-#: Controller/CategoriesController.php:58
-#: Controller/CategoriesController.php:83
+#: Controller/CategoriesController.php:59;85
 msgid "The category could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/CategoriesController.php:101
+#: Controller/CategoriesController.php:104
 msgid "The category has been deleted."
 msgstr ""
 
-#: Controller/CategoriesController.php:103
+#: Controller/CategoriesController.php:106
 msgid "The category could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ProductsController.php:54
-#: Controller/ProductsController.php:79
+#: Controller/ProductsController.php:55;81
 msgid "The product has been saved."
 msgstr ""
 
-#: Controller/ProductsController.php:58
-#: Controller/ProductsController.php:83
+#: Controller/ProductsController.php:59;85
 msgid "The product could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ProductsController.php:101
+#: Controller/ProductsController.php:104
 msgid "The product has been deleted."
 msgstr ""
 
-#: Controller/ProductsController.php:103
+#: Controller/ProductsController.php:106
 msgid "The product could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/StockInController.php:57
-#: Controller/StockInController.php:82
+#: Controller/StockInController.php:58;84
 msgid "The stock in has been saved."
 msgstr ""
 
-#: Controller/StockInController.php:61
-#: Controller/StockInController.php:86
+#: Controller/StockInController.php:62;88
 msgid "The stock in could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/StockInController.php:104
+#: Controller/StockInController.php:107
 msgid "The stock in has been deleted."
 msgstr ""
 
-#: Controller/StockInController.php:106
+#: Controller/StockInController.php:109
 msgid "The stock in could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/StockOutController.php:57
-#: Controller/StockOutController.php:82
+#: Controller/StockOutController.php:58;84
 msgid "The stock out has been saved."
 msgstr ""
 
-#: Controller/StockOutController.php:61
-#: Controller/StockOutController.php:86
+#: Controller/StockOutController.php:62;88
 msgid "The stock out could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/StockOutController.php:104
+#: Controller/StockOutController.php:107
 msgid "The stock out has been deleted."
 msgstr ""
 
-#: Controller/StockOutController.php:106
+#: Controller/StockOutController.php:109
 msgid "The stock out could not be deleted. Please, try again."
 msgstr ""
 
 #: Template/Categories/add.ctp:5
 #: Template/Categories/edit.ctp:5
-#: Template/Categories/index.ctp:5
-#: Template/Categories/index.ctp:27
-#: Template/Categories/view.ctp:5
-#: Template/Categories/view.ctp:51
+#: Template/Categories/index.ctp:5;27
+#: Template/Categories/view.ctp:5;51
 #: Template/Products/add.ctp:5
 #: Template/Products/edit.ctp:5
-#: Template/Products/index.ctp:5
-#: Template/Products/index.ctp:29
-#: Template/Products/view.ctp:5
-#: Template/Products/view.ctp:73
-#: Template/Products/view.ctp:103
-#: Template/Products/view.ctp:130
-#: Template/Products/view.ctp:156
+#: Template/Products/index.ctp:5;29
+#: Template/Products/view.ctp:5;71;104;134;163
 #: Template/StockIn/add.ctp:5
 #: Template/StockIn/edit.ctp:5
-#: Template/StockIn/index.ctp:5
-#: Template/StockIn/index.ctp:28
+#: Template/StockIn/index.ctp:5;28
 #: Template/StockIn/view.ctp:5
 #: Template/StockOut/add.ctp:5
 #: Template/StockOut/edit.ctp:5
-#: Template/StockOut/index.ctp:5
-#: Template/StockOut/index.ctp:28
+#: Template/StockOut/index.ctp:5;28
 #: Template/StockOut/view.ctp:5
 msgid "Actions"
-msgstr "Ações"
+msgstr ""
 
-#: Template/Categories/add.ctp:8
-#: Template/Categories/add.ctp:9
-#: Template/Categories/edit.ctp:14
-#: Template/Categories/edit.ctp:15
+#: Template/Categories/add.ctp:8;9
+#: Template/Categories/edit.ctp:14;15
 #: Template/Categories/index.ctp:10
-#: Template/Categories/view.ctp:10
-#: Template/Categories/view.ctp:12
+#: Template/Categories/view.ctp:10;12
 #: Template/Products/add.ctp:8
 #: Template/Products/edit.ctp:14
 #: Template/Products/view.ctp:10
-#: Template/StockIn/add.ctp:8
-#: Template/StockIn/add.ctp:9
-#: Template/StockIn/edit.ctp:14
-#: Template/StockIn/edit.ctp:15
+#: Template/StockIn/add.ctp:8;9
+#: Template/StockIn/edit.ctp:14;15
 #: Template/StockIn/index.ctp:10
-#: Template/StockIn/view.ctp:10
-#: Template/StockIn/view.ctp:12
-#: Template/StockOut/add.ctp:8
-#: Template/StockOut/add.ctp:9
-#: Template/StockOut/edit.ctp:14
-#: Template/StockOut/edit.ctp:15
+#: Template/StockIn/view.ctp:10;12
+#: Template/StockOut/add.ctp:8;9
+#: Template/StockOut/edit.ctp:14;15
 #: Template/StockOut/index.ctp:10
-#: Template/StockOut/view.ctp:10
-#: Template/StockOut/view.ctp:12
+#: Template/StockOut/view.ctp:10;12
 msgid "List {0}"
-msgstr "Lista {0}"
+msgstr ""
 
 #: Template/Categories/add.ctp:10
 #: Template/Categories/edit.ctp:16
-#: Template/Categories/index.ctp:9
-#: Template/Categories/index.ctp:11
-#: Template/Categories/view.ctp:11
-#: Template/Categories/view.ctp:13
+#: Template/Categories/index.ctp:9;11
+#: Template/Categories/view.ctp:11;13
 #: Template/Products/index.ctp:9
 #: Template/Products/view.ctp:11
 #: Template/StockIn/add.ctp:10
 #: Template/StockIn/edit.ctp:16
-#: Template/StockIn/index.ctp:9
-#: Template/StockIn/index.ctp:11
-#: Template/StockIn/view.ctp:11
-#: Template/StockIn/view.ctp:13
+#: Template/StockIn/index.ctp:9;11
+#: Template/StockIn/view.ctp:11;13
 #: Template/StockOut/add.ctp:10
 #: Template/StockOut/edit.ctp:16
-#: Template/StockOut/index.ctp:9
-#: Template/StockOut/index.ctp:11
-#: Template/StockOut/view.ctp:11
-#: Template/StockOut/view.ctp:13
+#: Template/StockOut/index.ctp:9;11
+#: Template/StockOut/view.ctp:11;13
 msgid "New {0}"
-msgstr "Novo(a) {0}"
+msgstr ""
 
 #: Template/Categories/add.ctp:28
 #: Template/Categories/edit.ctp:34
@@ -173,35 +141,27 @@ msgstr "Novo(a) {0}"
 #: Template/StockOut/add.ctp:27
 #: Template/StockOut/edit.ctp:33
 msgid "Submit"
-msgstr "Enviar"
+msgstr ""
 
 #: Template/Categories/edit.ctp:9
 #: Template/Categories/index.ctp:39
-#: Template/Categories/view.ctp:67
+#: Template/Categories/view.ctp:69
 #: Template/Products/edit.ctp:9
 #: Template/Products/index.ctp:45
-#: Template/Products/view.ctp:87
-#: Template/Products/view.ctp:114
-#: Template/Products/view.ctp:141
-#: Template/Products/view.ctp:166
+#: Template/Products/view.ctp:87;117;147;175
 #: Template/StockIn/edit.ctp:9
 #: Template/StockIn/index.ctp:41
 #: Template/StockOut/edit.ctp:9
 #: Template/StockOut/index.ctp:41
 msgid "Delete"
-msgstr "Deletar"
+msgstr ""
 
 #: Template/Categories/edit.ctp:11
 #: Template/Categories/index.ctp:39
-#: Template/Categories/view.ctp:9
-#: Template/Categories/view.ctp:67
+#: Template/Categories/view.ctp:9;69
 #: Template/Products/edit.ctp:11
 #: Template/Products/index.ctp:45
-#: Template/Products/view.ctp:9
-#: Template/Products/view.ctp:87
-#: Template/Products/view.ctp:114
-#: Template/Products/view.ctp:141
-#: Template/Products/view.ctp:166
+#: Template/Products/view.ctp:9;87;117;147;175
 #: Template/StockIn/edit.ctp:11
 #: Template/StockIn/index.ctp:41
 #: Template/StockIn/view.ctp:9
@@ -209,96 +169,75 @@ msgstr "Deletar"
 #: Template/StockOut/index.ctp:41
 #: Template/StockOut/view.ctp:9
 msgid "Are you sure you want to delete # {0}?"
-msgstr "Quer mesmo deletar?"
+msgstr ""
 
 #: Template/Categories/index.ctp:37
 #: Template/Categories/view.ctp:65
 #: Template/Products/index.ctp:43
-#: Template/Products/view.ctp:85
-#: Template/Products/view.ctp:112
-#: Template/Products/view.ctp:139
-#: Template/Products/view.ctp:164
+#: Template/Products/view.ctp:83;113;143;171
 #: Template/StockIn/index.ctp:39
 #: Template/StockOut/index.ctp:39
 msgid "View"
-msgstr "Ver"
+msgstr ""
 
 #: Template/Categories/index.ctp:38
-#: Template/Categories/view.ctp:66
+#: Template/Categories/view.ctp:67
 #: Template/Products/index.ctp:44
-#: Template/Products/view.ctp:86
-#: Template/Products/view.ctp:113
-#: Template/Products/view.ctp:140
-#: Template/Products/view.ctp:165
+#: Template/Products/view.ctp:85;115;145;173
 #: Template/StockIn/index.ctp:40
 #: Template/StockOut/index.ctp:40
 msgid "Edit"
-msgstr "Editar"
+msgstr ""
 
 #: Template/Categories/index.ctp:47
 #: Template/Products/index.ctp:53
 #: Template/StockIn/index.ctp:49
 #: Template/StockOut/index.ctp:49
 msgid "previous"
-msgstr "anterior"
+msgstr ""
 
 #: Template/Categories/index.ctp:49
 #: Template/Products/index.ctp:55
 #: Template/StockIn/index.ctp:51
 #: Template/StockOut/index.ctp:51
 msgid "next"
-msgstr "próximo"
+msgstr ""
 
 #: Template/Categories/index.ctp:51
 #: Template/Products/index.ctp:57
 #: Template/StockIn/index.ctp:53
 #: Template/StockOut/index.ctp:53
 msgid "Page {{page}} of {{pages}}, showing {{current}} records out of\n                    {{count}} total, starting on record {{start}}, ending on {{end}}"
-msgstr "Página {{page}} de {{pages}}, mostrando {{current}} registros de\n                    {{count}} total, começando em registro {{start}}, terminando em {{end}}"
+msgstr ""
 
 #: Template/Categories/view.ctp:8
 #: Template/Products/view.ctp:8
 #: Template/StockIn/view.ctp:8
 #: Template/StockOut/view.ctp:8
 msgid "Edit {0}"
-msgstr "Editar {0}"
+msgstr ""
 
 #: Template/Categories/view.ctp:9
 #: Template/Products/view.ctp:9
 #: Template/StockIn/view.ctp:9
 #: Template/StockOut/view.ctp:9
 msgid "Delete {0}"
-msgstr "Deletar {0}"
+msgstr ""
 
 #: Template/Categories/view.ctp:39
-#: Template/Products/view.ctp:63
-#: Template/Products/view.ctp:96
-#: Template/Products/view.ctp:123
-#: Template/Products/view.ctp:150
+#: Template/Products/view.ctp:61;97;127;157
 msgid "Related {0}"
-msgstr "Relacionados {0}"
+msgstr ""
 
 #: Template/Layout/error.ctp:35
 msgid "Error"
-msgstr "Erro"
+msgstr ""
 
 #: Template/Layout/error.ctp:43
 msgid "Back"
-msgstr "Voltar"
+msgstr ""
 
 #: Template/Products/index.ctp:16
 msgid "Products"
 msgstr "Produtos"
 
-#: Template/Products/index.ctp:16
-msgid "Product"
-msgstr "Produto"
-
-msgid "Categories"
-msgstr "Categorias"
-
-msgid "Stock In"
-msgstr "Entrada de Estoque"
-
-msgid "Stock Out"
-msgstr "Saída de Estoque"
