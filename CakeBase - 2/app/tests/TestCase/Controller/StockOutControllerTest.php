@@ -2,17 +2,13 @@
 namespace App\Test\TestCase\Controller;
 
 use App\Controller\StockOutController;
-use Cake\TestSuite\IntegrationTestTrait;
-use Cake\TestSuite\TestCase;
+use Cake\TestSuite\IntegrationTestCase;
 
 /**
  * App\Controller\StockOutController Test Case
- *
- * @uses \App\Controller\StockOutController
  */
-class StockOutControllerTest extends TestCase
+class StockOutControllerTest extends IntegrationTestCase
 {
-    use IntegrationTestTrait;
 
     /**
      * Fixtures
@@ -20,8 +16,12 @@ class StockOutControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.StockOut',
-        'app.Products',
+        'app.stock_out',
+        'app.products',
+        'app.stock',
+        'app.stock_in',
+        'app.categories',
+        'app.categories_products'
     ];
 
     /**

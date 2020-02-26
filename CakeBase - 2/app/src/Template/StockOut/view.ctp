@@ -5,8 +5,6 @@
                 <h3 class="box-title"><?= __('Actions') ?></h3>
             </div>
             <ul class="nav nav-pills nav-stacked">
-                <li><?= $this->Html->link(__('Edit {0}', ['Stock Out']), ['action' => 'edit', $stockOut->id]) ?> </li>
-                <li><?= $this->Form->postLink(__('Delete {0}', ['Stock Out']), ['action' => 'delete', $stockOut->id], ['confirm' => __('Are you sure you want to delete # {0}?', $stockOut->id)]) ?> </li>
                 <li><?= $this->Html->link(__('List {0}', ['Stock Out']), ['action' => 'index']) ?> </li>
                 <li><?= $this->Html->link(__('New {0}', ['Stock Out']), ['action' => 'add']) ?> </li>
                         <li><?= $this->Html->link(__('List {0}', ['Products']), ['controller' => 'Products', 'action' => 'index']) ?> </li>

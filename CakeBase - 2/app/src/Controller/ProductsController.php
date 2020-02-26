@@ -7,43 +7,49 @@ use App\Controller\AppController;
  * Products Controller
  *
  * @property \App\Model\Table\ProductsTable $Products
- *
- * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ProductsController extends AppController
 {
+
     /**
      * Index method
      *
-     * @return \Cake\Http\Response|null
+     * @return \Cake\Network\Response|null
      */
     public function index()
     {
+        $this->paginate = [
+            'contain'=> [
+                'Stock'
+            ]
+        ];
         $products = $this->paginate($this->Products);
 
         $this->set(compact('products'));
+        $this->set('_serialize', ['products']);
     }
 
     /**
      * View method
      *
      * @param string|null $id Product id.
-     * @return \Cake\Http\Response|null
+     * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
         $product = $this->Products->get($id, [
-            'contain' => ['Categories', 'Stock', 'StockIn', 'StockOut'],
+            'contain' => ['Categories', 'Stock', 'StockIn', 'StockOut']
         ]);
 
         $this->set('product', $product);
+        $this->set('_serialize', ['product']);
     }
 
     /**
      * Add method
      *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add()
     {
@@ -59,19 +65,20 @@ class ProductsController extends AppController
         }
         $categories = $this->Products->Categories->find('list', ['limit' => 200]);
         $this->set(compact('product', 'categories'));
+        $this->set('_serialize', ['product']);
     }
 
     /**
      * Edit method
      *
      * @param string|null $id Product id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null)
     {
         $product = $this->Products->get($id, [
-            'contain' => ['Categories'],
+            'contain' => ['Categories']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $product = $this->Products->patchEntity($product, $this->request->getData());
@@ -84,13 +91,14 @@ class ProductsController extends AppController
         }
         $categories = $this->Products->Categories->find('list', ['limit' => 200]);
         $this->set(compact('product', 'categories'));
+        $this->set('_serialize', ['product']);
     }
 
     /**
      * Delete method
      *
      * @param string|null $id Product id.
-     * @return \Cake\Http\Response|null Redirects to index.
+     * @return \Cake\Network\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)

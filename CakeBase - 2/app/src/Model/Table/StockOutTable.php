@@ -9,13 +9,12 @@ use Cake\Validation\Validator;
 /**
  * StockOut Model
  *
- * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
+ * @property \Cake\ORM\Association\BelongsTo $Products
  *
  * @method \App\Model\Entity\StockOut get($primaryKey, $options = [])
  * @method \App\Model\Entity\StockOut newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\StockOut[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StockOut|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StockOut saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\StockOut|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\StockOut patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\StockOut[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\StockOut findOrCreate($search, callable $callback = null, $options = [])
@@ -24,6 +23,7 @@ use Cake\Validation\Validator;
  */
 class StockOutTable extends Table
 {
+
     /**
      * Initialize method
      *
@@ -39,10 +39,11 @@ class StockOutTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('StockManager');
 
         $this->belongsTo('Products', [
             'foreignKey' => 'product_id',
-            'joinType' => 'INNER',
+            'joinType' => 'INNER'
         ]);
     }
 
@@ -56,12 +57,12 @@ class StockOutTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            ->allowEmpty('id', 'create');
 
         $validator
             ->integer('quantity')
             ->requirePresence('quantity', 'create')
-            ->notEmptyString('quantity');
+            ->notEmpty('quantity');
 
         return $validator;
     }

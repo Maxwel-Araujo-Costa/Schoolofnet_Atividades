@@ -5,15 +5,18 @@ use Cake\TestSuite\Fixture\TestFixture;
 
 /**
  * StockOutFixture
+ *
  */
 class StockOutFixture extends TestFixture
 {
+
     /**
      * Table name
      *
      * @var string
      */
     public $table = 'stock_out';
+
     /**
      * Fields
      *
@@ -34,25 +37,22 @@ class StockOutFixture extends TestFixture
         ],
         '_options' => [
             'engine' => 'InnoDB',
-            'collation' => 'utf8mb4_general_ci'
+            'collation' => 'utf8_general_ci'
         ],
     ];
     // @codingStandardsIgnoreEnd
+
     /**
-     * Init method
+     * Records
      *
-     * @return void
+     * @var array
      */
-    public function init()
-    {
-        $this->records = [
-            [
-                'id' => 1,
-                'product_id' => 1,
-                'quantity' => 1,
-                'created' => '2020-02-21 17:02:35',
-            ],
-        ];
-        parent::init();
-    }
+    public $records = [
+        [
+            'id' => 1,
+            'product_id' => 1,
+            'quantity' => 1,
+            'created' => '2017-03-21 01:34:53'
+        ],
+    ];
 }

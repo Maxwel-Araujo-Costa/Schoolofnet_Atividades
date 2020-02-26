@@ -18,14 +18,14 @@
                 <?= $this->Form->create($product) ?>
                 <fieldset>
                     <?php
-                    echo $this->Form->input('title');
-                    echo $this->Form->input('price');
-                    echo $this->Form->input('cost');
-                    echo $this->Form->input('status');
-                    echo $this->Form->input('description');
-                    echo $this->Form->input('alert_quantity');
-                    echo $this->Form->input('categories._ids', ['options' => $categories]);
-                    ?>
+                                    echo $this->Form->input('title');
+                                    echo $this->Form->input('price');
+                                    echo $this->Form->input('cost');
+                                    echo $this->Form->input('status');
+                                    echo $this->Form->input('description');
+                                    echo $this->Form->input('alert_quantity');
+                                    echo $this->Form->input('categories._ids', ['options' => $categories]);
+                                ?>
                 </fieldset>
                 <?= $this->Form->button(__('Submit')) ?>
                 <?= $this->Form->end() ?>
