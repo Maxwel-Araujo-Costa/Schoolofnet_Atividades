@@ -1,4 +1,5 @@
 <?php
+
 use Migrations\AbstractMigration;
 
 class CreateProduct extends AbstractMigration
@@ -14,25 +15,25 @@ class CreateProduct extends AbstractMigration
     {
         $table = $this->table('products');
         $table->addColumn('title', 'string', [
-            'limit'=>100
+            'limit' => 100
         ]);
         $table->addColumn('price', 'decimal', [
-            'precision'=> 11,
-            'scale'=>2
+            'precision' => 11,
+            'scale' => 2
         ]);
         $table->addColumn('cost', 'decimal', [
-            'precision'=> 11,
-            'scale'=>2
+            'precision' => 11,
+            'scale' => 2
         ]);
         $table->addColumn('status', 'integer', [
-            'default'=> 1,
+            'default' => 1,
         ]);
         $table->addColumn('description', 'text', [
-            'null'=>true,
-            'default'=>null
+            'null' => true,
+            'default' => null
         ]);
         $table->addColumn('alert_quantity', 'integer', [
-            'default'=>0
+            'default' => 0
         ]);
         $table->addColumn('created', 'datetime');
         $table->addColumn('modified', 'datetime');
