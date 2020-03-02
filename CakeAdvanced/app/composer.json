@@ -25,14 +25,16 @@
     "autoload": {
         "psr-4": {
             "App\\": "src",
-            "Stock\\": "./plugins/Stock/src/"
+            "Stock\\": "./plugins/Stock/src/",
+            "Auth\\": "./plugins/Auth/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "App\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests",
-            "Stock\\Test\\": "./plugins/Stock/tests/"
+            "Stock\\Test\\": "./plugins/Stock/tests/",
+            "Auth\\Test\\": "./plugins/Auth/tests/"
         }
     },
     "scripts": {
