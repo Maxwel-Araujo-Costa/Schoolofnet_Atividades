@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -43,6 +45,26 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginAction' => [
+                'plugin' => 'Auth',
+                'controller' => 'users',
+                'action' => 'login'
+            ],
+            'authenticate' => [
+                'Form' => [
+                    'userModel' => 'Auth.Users',
+                    'fields' => ['username' => 'email']
+                ]
+            ]
+        ]);
+
+        $locale = $this->Auth->user('locale');
+
+        $this->loadComponent('locale', [
+            'user_preference' => $locale
+        ]);
+        $this->loadComponent('Cookie');
 
         /*
          * Enable the following components for recommended CakePHP security settings.
@@ -62,7 +84,8 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
-        if (!array_key_exists('_serialize', $this->viewVars) &&
+        if (
+            !array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
             $this->set('_serialize', true);
