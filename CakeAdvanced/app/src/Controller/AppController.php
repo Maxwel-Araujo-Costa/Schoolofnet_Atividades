@@ -61,7 +61,7 @@ class AppController extends Controller
 
         $locale = $this->Auth->user('locale');
 
-        $this->loadComponent('locale', [
+        $this->loadComponent('Locale', [
             'user_preference' => $locale
         ]);
         $this->loadComponent('Cookie');
