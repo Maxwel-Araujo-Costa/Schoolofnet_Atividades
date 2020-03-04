@@ -14,7 +14,17 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-// You can remove this if you are confident that your PHP version is sufficient.
+if (class_exists('josegonzalez\Dotenv\Loader') && file_exists(__DIR__ . '/../.env')) {
+    \josegonzalez\Dotenv\Loader::load([
+        'filepath' => __DIR__ . '/../.env',
+        'toServer' => true,
+        'skipExisting' => ['toServer'],
+        'raiseExeptions' => true
+    ]);
+}
+
+
+
 if (version_compare(PHP_VERSION, '5.6.0') < 0) {
     trigger_error('Your PHP version must be equal or higher than 5.6.0 to use CakePHP.', E_USER_ERROR);
 }
@@ -80,6 +90,8 @@ try {
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
+
+
 
 /*
  * Load an environment local configuration file.
@@ -214,14 +226,11 @@ Type::build('timestamp')
  * Plugin::load('Migrations'); //Loads a single plugin named Migrations
  *
  */
-
 /*
- * Only try to load DebugKit in development mode
- * Debug Kit should not be installed on a production system
- */
 if (Configure::read('debug')) {
+    Configure::write('DebugKit.forceEnable', true);
     Plugin::load('DebugKit', ['bootstrap' => true]);
-}
+}*/
 
 Plugin::load('TwitterBootstrap');
 Plugin::load('Stock',  ['bootstrap' => false, 'routes' => true]);
