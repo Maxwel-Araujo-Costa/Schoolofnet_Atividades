@@ -27,8 +27,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php debug($users);
-            foreach ($users as $user) : ?>
+            <?php foreach ($users as $user) : ?>
                 <tr>
                     <td><?= $this->Number->format($user->id) ?></td>
                     <td><?= h($user->email) ?></td>
