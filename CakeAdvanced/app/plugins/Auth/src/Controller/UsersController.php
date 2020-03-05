@@ -49,6 +49,7 @@ class UsersController extends AppController
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
     }
 
     /**
@@ -65,6 +66,7 @@ class UsersController extends AppController
         ]);
 
         $this->set('user', $user);
+        $this->set('_serialize', ['user']);
     }
 
     /**
@@ -115,6 +117,7 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
     }
 
     /**

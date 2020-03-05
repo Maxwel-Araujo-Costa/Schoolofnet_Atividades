@@ -1,5 +1,7 @@
-/vendor/*
+/Vendor/*
 /config/app.php
 /tmp/*
 /logs/*
 .env
+
+!vendor/cakephp/cakephp/src/View/Form/EntityContext.php

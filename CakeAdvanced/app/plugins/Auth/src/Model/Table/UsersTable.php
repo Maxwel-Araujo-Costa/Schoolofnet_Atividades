@@ -1,4 +1,5 @@
 <?php
+
 namespace Auth\Model\Table;
 
 use Cake\ORM\Query;
@@ -49,30 +50,24 @@ class UsersTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            ->allowEmpty('id', null, 'create');
 
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email');
+            ->notEmpty('email');
 
         $validator
-            ->scalar('password')
-            ->maxLength('password', 255)
             ->requirePresence('password', 'create')
-            ->notEmptyString('password');
+            ->notEmpty('password');
 
         $validator
-            ->scalar('role')
-            ->maxLength('role', 20)
             ->requirePresence('role', 'create')
-            ->notEmptyString('role');
+            ->notEmpty('role');
 
         $validator
-            ->scalar('locale')
-            ->maxLength('locale', 5)
             ->requirePresence('locale', 'create')
-            ->notEmptyString('locale');
+            ->notEmpty('locale');
 
         return $validator;
     }
