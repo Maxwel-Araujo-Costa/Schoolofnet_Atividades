@@ -4,4 +4,3 @@
 /logs/*
 .env
 
-!vendor/cakephp/cakephp/src/View/Form/EntityContext.php
