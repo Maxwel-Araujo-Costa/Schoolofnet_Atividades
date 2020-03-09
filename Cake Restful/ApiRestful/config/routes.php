@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration
  *
@@ -17,6 +18,7 @@
  * @link          https://cakephp.org CakePHP(tm) Project
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+
 use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
@@ -102,3 +104,16 @@ Router::scope('/', function (RouteBuilder $routes) {
  * });
  * ```
  */
+
+Router::scope('/api/v1', ['prefix' => 'api/v1'], function ($routes) {
+    $routes->setExtensions(['json', 'xml']);
+    $routes->resources('Users', [
+        'map' => [
+            'login' => [
+                'action' => 'login',
+                'method' => 'POST'
+            ]
+        ]
+    ]);
+    $routes->fallbacks('InflectedRoute');
+});
