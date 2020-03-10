@@ -44,4 +44,62 @@ class UsersController extends AppController
             '_serialize' => ['data']
         ]);
     }
+
+    public function view($id)
+    {
+        $user = $this->Users->get($id);
+        $this->set([
+            'data' => $user,
+            '_serialize' => ['data']
+        ]);
+    }
+
+    public function add()
+    {
+        $user = $this->Users->newEntity($this->request->getData());
+        if ($this->Users->save($user)) {
+            $message = 'saved';
+        } else {
+            $message = 'Error';
+        }
+
+        $this->set([
+            'data' => $user,
+            'message' => $message,
+            '_serialize' => ['data', 'message']
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $user = $this->Users->get($id);
+        $user = $this->Users->patchEntity($user, $this->request->getData());
+        if ($this->Users->save($user)) {
+            $message = 'saved';
+        } else {
+            $message = 'Error';
+        }
+
+        $this->set([
+            'data' => $user,
+            'message' => $message,
+            '_serialize' => ['data', 'message']
+        ]);
+    }
+
+    public function delete($id)
+    {
+        $user = $this->Users->get($id);
+        if ($this->Users->delete($user)) {
+            $message = 'Deleted';
+        } else {
+            $message = 'Error';
+        }
+
+        $this->set([
+            'data' => $user,
+            'message' => $message,
+            '_serialize' => ['data', 'message']
+        ]);
+    }
 }
