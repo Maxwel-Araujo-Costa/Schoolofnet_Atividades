@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfc2f3cab8d64f9f3256d65ebc867688d
+class ComposerStaticInit66363536b4d4b331028e4369e01160ec
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -32,15 +32,15 @@ class ComposerStaticInitfc2f3cab8d64f9f3256d65ebc867688d
         ),
         'BeholderHive\\CursoSON\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/..' . '/beholderhive/curso-composer-son/src',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfc2f3cab8d64f9f3256d65ebc867688d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfc2f3cab8d64f9f3256d65ebc867688d::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit66363536b4d4b331028e4369e01160ec::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit66363536b4d4b331028e4369e01160ec::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
