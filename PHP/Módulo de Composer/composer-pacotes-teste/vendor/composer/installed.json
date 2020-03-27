@@ -1,5 +1,43 @@
 [
     {
+        "name": "beholderhive/curso-composer-son",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/BeholderHive/beholder-curso-composer-son.git",
+            "reference": "30ff74e72966146703f8a6ee782daa2b93537a53"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/BeholderHive/beholder-curso-composer-son/zipball/30ff74e72966146703f8a6ee782daa2b93537a53",
+            "reference": "30ff74e72966146703f8a6ee782daa2b93537a53",
+            "shasum": ""
+        },
+        "require": {
+            "monolog/monolog": "^1.25"
+        },
+        "time": "2020-03-27T16:19:38+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "BeholderHive\\CursoSON\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Maxwel A Costa",
+                "email": "maxwel_ara@yahoo.com"
+            }
+        ],
+        "description": "Pacote de exemplo do curso de composer da School of Net"
+    },
+    {
         "name": "monolog/monolog",
         "version": "1.25.3",
         "version_normalized": "1.25.3.0",
