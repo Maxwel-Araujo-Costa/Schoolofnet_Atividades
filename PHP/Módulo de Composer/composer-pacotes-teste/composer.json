@@ -1,0 +1,18 @@
+{
+  "require": {
+    "beholderhive/curso-composer-son": "^1.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/BeholderHive/beholder-curso-composer-son.git"
+    }
+  ],
+  "scripts": {
+    "server": "php -S localhost:8080 -t public",
+    "hello-log": "php bootstrap.php"
+  },
+  "config": {
+    "process-timeout": 0
+  }
+}
